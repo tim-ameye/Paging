@@ -2,7 +2,7 @@ import javafx.application.*;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.stage.*;
-
+//test
 public class Main extends Application {
 	
 	public static void main(String[] args) {
