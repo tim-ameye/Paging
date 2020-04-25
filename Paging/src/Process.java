@@ -122,4 +122,8 @@ public class Process {
 		}
 		return p;
 	}
+	
+	public boolean checkPresentBitOfPage(List<Integer> adress){
+        return lijst.get(adress.get(0)).getTableEntry().isPresentBit();
+    }
 }
