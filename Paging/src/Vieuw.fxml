@@ -5,7 +5,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox prefHeight="540.0" prefWidth="1207.0">
@@ -32,11 +31,11 @@
             </TitledPane>
             <VBox prefHeight="200.0" prefWidth="300.0">
                <children>
-                  <TitledPane animated="false" text="RAM">
+                  <TitledPane animated="false" prefHeight="363.0" prefWidth="362.0" text="RAM">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="365.0" prefWidth="350.0">
                            <children>
-                              <TableView prefHeight="360.0" prefWidth="350.0">
+                              <TableView prefHeight="328.0" prefWidth="350.0">
                                 <columns>
                                   <TableColumn prefWidth="124.0" text="Frame #" />
                                   <TableColumn prefWidth="125.0" text="Process id" />
@@ -53,32 +52,40 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </TitledPane>
-                  <TitledPane alignment="TOP_CENTER" prefWidth="0.0" text="Operations" textAlignment="CENTER">
+                  <TitledPane alignment="TOP_CENTER" maxHeight="120.0" prefWidth="0.0" text="Operations" textAlignment="CENTER">
                      <content>
-                        <VBox>
+                        <VBox prefHeight="90.0" prefWidth="350.0">
                            <children>
                               <Button alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Execute 1 process" textAlignment="CENTER">
                                  <VBox.margin>
-                                    <Insets bottom="5.0" left="95.0" />
+                                    <Insets bottom="5.0" left="105.0" />
                                  </VBox.margin>
                               </Button>
                               <Button alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Excecute all processes" textAlignment="CENTER">
                                  <VBox.margin>
-                                    <Insets bottom="5.0" left="95.0" />
+                                    <Insets bottom="5.0" left="105.0" />
                                  </VBox.margin>
                               </Button>
                               <Button alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Restart" textAlignment="CENTER">
                                  <VBox.margin>
-                                    <Insets left="95.0" />
+                                    <Insets bottom="5.0" left="105.0" />
                                  </VBox.margin>
                               </Button>
                            </children>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
                         </VBox>
                      </content>
                      <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" />
+                        <Insets left="10.0" />
                      </VBox.margin>
                   </TitledPane>
+                  <ChoiceBox fx:id="kiesbox" prefHeight="25.0" prefWidth="358.0">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
                </children>
             </VBox>
             <VBox maxWidth="400.0" prefHeight="540.0" prefWidth="376.0">
