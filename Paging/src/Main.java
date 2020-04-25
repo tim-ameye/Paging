@@ -11,7 +11,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception{
-		Parent root = FXMLLoader.load(getClass().getResource("GUI.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("Vieuw.fxml"));
 		primaryStage.setTitle("Simulatie van geheugen en processor bij paginatie");
 		primaryStage.setScene(new Scene(root,300,250));
 		primaryStage.show();

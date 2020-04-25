@@ -1,4 +1,3 @@
-import java.awt.event.ActionEvent;
 import java.util.List;
 
 import javafx.fxml.FXML;
@@ -92,28 +91,30 @@ public class GUI {
     private Label huidigeOffset;
     
     
-    
+   
     
     
     @FXML
-    public void start() {
+    public void initialize() {
     	kiesBox.getItems().removeAll(kiesBox.getItems());
     	kiesBox.getItems().addAll("3 processen","4 processen","20000 instructies 20 processen");
     	kiesBox.getSelectionModel().select("3 processen");
+    	
+    	
     	
     	main = new MainControl();
     	
     	pageNumColum.setCellValueFactory(new PropertyValueFactory<Page, Integer>("pageNumber"));
     	presentBitColum.setCellValueFactory(new PropertyValueFactory<TableEntry, Boolean>("presentBit"));
     	modifyBitColum.setCellValueFactory(new PropertyValueFactory<TableEntry, Boolean>("modifyBit"));
-        latColum.setCellValueFactory(new PropertyValueFactory<>("lastAccesTime"));
-        frameNumColum.setCellValueFactory(new PropertyValueFactory<>("frameNumber"));
+        latColum.setCellValueFactory(new PropertyValueFactory<TableEntry, Integer>("latTime"));
+        frameNumColum.setCellValueFactory(new PropertyValueFactory<TableEntry, Integer>("frameNumber"));
         
         addDataToPageTable();
         
-        frameNumbColum.setCellValueFactory(new PropertyValueFactory<>("frameNumber"));
-        pidColum.setCellValueFactory(new PropertyValueFactory<>("processId"));
-        pageNumbColum.setCellValueFactory(new PropertyValueFactory<>("pageNumber"));
+        frameNumbColum.setCellValueFactory(new PropertyValueFactory<Page, Integer>("frameNumber"));
+        pidColum.setCellValueFactory(new PropertyValueFactory<Page, Integer>("pId"));
+        pageNumbColum.setCellValueFactory(new PropertyValueFactory<Page, Integer>("pageNumber"));
 
         addDataToRAMTable();
     	
@@ -153,7 +154,7 @@ public class GUI {
     }
     
     @FXML
-    public void executeAll(ActionEvent event) {
+    public void executeAll(javafx.event.ActionEvent event) {
     	String value = kiesBox.getValue();
     	main.executeQueue(value);
     	refreshAll();
@@ -161,7 +162,7 @@ public class GUI {
     }
     
     @FXML
-    public void executeOne(ActionEvent event) {
+    public void executeOne(javafx.event.ActionEvent event) {
     	String val = kiesBox.getValue();
     	if(dataSet == null) dataSet = val;
     	else if(dataSet.equals(val)) dataSet = val;
@@ -169,6 +170,8 @@ public class GUI {
     		dataSet = val;
     		main.initialise();
     	}
+    	main.executeOne(val);
+    	refreshAll();
     }
     
     public void refreshAll(){
@@ -245,16 +248,6 @@ public class GUI {
         vorigeFrame.setText(huidigeFrame.getText());
         vorigeOffset.setText(huidigeOffset.getText());
         vorigeFysiekAdres.setText(huidigeFysiekAdres.getText());
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    }  
     
 }

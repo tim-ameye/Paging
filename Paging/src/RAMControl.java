@@ -52,7 +52,9 @@ public class RAMControl {
 			if(pr.getProcessId() == pID) p = pr;
 		}
 		for(int i = 0; i < ram.getFrameCount(); i++) {
-			if(ram.getFrameValueArray()[i].getpID() == p.getProcessId()) removePage(ram.getFrameValueArray()[i]);
+			if(ram.getFrameValueArray()[i] != null) {
+				if(ram.getFrameValueArray()[i].getpID() == p.getProcessId()) removePage(ram.getFrameValueArray()[i]);
+			}
 		}
 		ram.removeProcess(p);
 	}
