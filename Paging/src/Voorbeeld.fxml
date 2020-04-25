@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.kuleuven.gent.PelleReyniersWouterLegiest.GUI.GUIController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="650.0" prefWidth="1200.0">
+         <children>
+            <TitledPane animated="false" collapsible="false" layoutX="28.0" layoutY="29.0" prefHeight="104.0" prefWidth="267.0" text="Algemeen">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="75.0" prefWidth="153.0">
+                           <children>
+                              <Pane prefHeight="15.0" prefWidth="100.0" />
+                              <Label text="Timer : " />
+                              <Label text="Total Writes to RAM" />
+                              <Label text="Total Read from RAM " />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="165.0" prefHeight="75.0" prefWidth="53.0">
+                           <children>
+                              <Pane prefHeight="15.0" prefWidth="100.0" />
+                              <Label fx:id="algemeenTimer" text="0 " />
+                              <Label fx:id="algemeenWriteRam" text="0" />
+                              <Label fx:id="algmeenReadRam" text="0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <Button fx:id="exeAll" layoutX="845.0" layoutY="510.0" mnemonicParsing="false" onAction="#executeAll" text="Execute All" />
+            <Button fx:id="exeOne" layoutX="845.0" layoutY="548.0" mnemonicParsing="false" onAction="#executeOne" text="Step-by-Step Execution" />
+            <TitledPane animated="false" collapsible="false" layoutX="28.0" layoutY="385.0" prefHeight="236.0" prefWidth="267.0" text="Huidig instructie">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="206.0" prefWidth="265.0">
+                     <children>
+                        <VBox prefHeight="214.0" prefWidth="267.0">
+                           <children>
+                              <Pane prefHeight="15.0" prefWidth="267.0" />
+                              <HBox prefHeight="26.0" prefWidth="267.0">
+                                 <children>
+                                    <Label text="Instructie" />
+                                    <Pane prefHeight="52.0" prefWidth="140.0" />
+                                    <Label fx:id="huidigeInscrutie" text="Begin" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="27.0" prefWidth="267.0">
+                                 <children>
+                                    <Label text="Virtueel adres" />
+                                    <Pane prefHeight="27.0" prefWidth="113.0" />
+                                    <Label fx:id="huidigeVirtueelAdres" text="----" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="23.0" prefWidth="267.0">
+                                 <children>
+                                    <Label text="Fysisch adres" />
+                                    <Pane prefHeight="23.0" prefWidth="113.0" />
+                                    <Label fx:id="huidigeFysiekAdres" text="----" />
+                                 </children>
+                              </HBox>
+                              <Pane prefHeight="24.0" prefWidth="267.0">
+                                 <children>
+                                    <Separator layoutX="40.0" layoutY="11.0" prefWidth="200.0" />
+                                 </children>
+                              </Pane>
+                              <HBox prefHeight="27.0" prefWidth="267.0">
+                                 <children>
+                                    <Label text="Process id " />
+                                    <Pane prefHeight="27.0" prefWidth="132.0" />
+                                    <Label fx:id="huidigeProcessID" text="-" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="26.0" prefWidth="267.0">
+                                 <children>
+                                    <Label text="Page" />
+                                    <Pane prefHeight="26.0" prefWidth="171.0" />
+                                    <Label fx:id="huidigeFrame" text="-" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="21.0" prefWidth="267.0">
+                                 <children>
+                                    <Label text="Offset" />
+                                    <Pane prefHeight="21.0" prefWidth="163.0" />
+                                    <Label fx:id="huidigeOffset" text="-" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" layoutX="329.0" layoutY="29.0" prefHeight="511.0" prefWidth="484.0" text="Page Table van Huidige Process">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="463.0">
+                     <children>
+                        <TableView fx:id="pageTable" layoutX="20.0" layoutY="5.0" prefHeight="466.0" prefWidth="445.0">
+                          <columns>
+                            <TableColumn fx:id="pageNumColum" editable="false" prefWidth="63.0" resizable="false" text="Page #" />
+                            <TableColumn fx:id="presentBitColum" editable="false" prefWidth="87.0" resizable="false" sortable="false" text="Present bit" />
+                              <TableColumn fx:id="modifyBitColum" editable="false" prefWidth="75.0" resizable="false" sortable="false" text="Modify bit" />
+                              <TableColumn fx:id="latColum" editable="false" prefWidth="125.5543212890625" resizable="false" sortable="false" text="Last Access Time" />
+                              <TableColumn fx:id="frameNumColum" editable="false" prefWidth="75.0" resizable="false" sortable="false" text="Frame #" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <Label layoutX="931.0" layoutY="613.0" text="U gebracht door Reyniers&amp;Legiest" />
+            <Label layoutX="931.0" layoutY="628.0" text="Programma is niet getest op panda's" />
+            <TitledPane animated="false" collapsible="false" layoutX="27.0" layoutY="138.0" prefHeight="236.0" prefWidth="267.0" text="Vorige Instructie">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="206.0" prefWidth="265.0">
+                     <children>
+                        <VBox prefHeight="214.0" prefWidth="267.0">
+                           <children>
+                              <Pane prefHeight="15.0" prefWidth="267.0" />
+                              <HBox prefHeight="26.0" prefWidth="267.0">
+                                 <children>
+                                    <Label text="Instructie" />
+                                    <Pane prefHeight="52.0" prefWidth="140.0" />
+                                    <Label fx:id="vorigeInscrutie" text="Begin" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="27.0" prefWidth="267.0">
+                                 <children>
+                                    <Label text="Virtueel adres" />
+                                    <Pane prefHeight="27.0" prefWidth="112.0" />
+                                    <Label fx:id="vorigeVirtueelAdres" text="----" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="23.0" prefWidth="267.0">
+                                 <children>
+                                    <Label text="Fysisch adres" />
+                                    <Pane prefHeight="23.0" prefWidth="112.0" />
+                                    <Label fx:id="vorigeFysiekAdres" text="----" />
+                                 </children>
+                              </HBox>
+                              <Pane prefHeight="24.0" prefWidth="267.0">
+                                 <children>
+                                    <Separator layoutX="40.0" layoutY="11.0" prefWidth="200.0" />
+                                 </children>
+                              </Pane>
+                              <HBox prefHeight="27.0" prefWidth="267.0">
+                                 <children>
+                                    <Label text="Process id " />
+                                    <Pane prefHeight="27.0" prefWidth="132.0" />
+                                    <Label fx:id="vorigeProcessID" text="-" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="26.0" prefWidth="267.0">
+                                 <children>
+                                    <Label text="Page" />
+                                    <Pane prefHeight="26.0" prefWidth="169.0" />
+                                    <Label fx:id="vorigeFrame" text="-" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="21.0" prefWidth="267.0">
+                                 <children>
+                                    <Label text="Offset" />
+                                    <Pane prefHeight="21.0" prefWidth="163.0" />
+                                    <Label fx:id="vorigeOffset" text="-" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" layoutX="845.0" layoutY="29.0" prefHeight="434.0" prefWidth="309.0" text="RAM">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="ram" layoutX="5.0" layoutY="9.0" prefHeight="387.0" prefWidth="292.0">
+                          <columns>
+                            <TableColumn fx:id="frameNumbColum" editable="false" prefWidth="71.70294189453125" resizable="false" sortable="false" text="Frame #" />
+                            <TableColumn fx:id="pidColum" editable="false" prefWidth="63.11395263671875" resizable="false" sortable="false" text="pid" />
+                              <TableColumn fx:id="pageNumbColum" editable="false" prefWidth="90.3861083984375" resizable="false" sortable="false" text="Pagenumber" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <ChoiceBox fx:id="kiesBox" layoutX="538.0" layoutY="548.0" prefHeight="27.0" prefWidth="279.0" />
+            <Button fx:id="restart" layoutX="1091.0" layoutY="548.0" mnemonicParsing="false" onAction="#setRestart" text="Restart" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
