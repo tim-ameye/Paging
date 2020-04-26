@@ -107,14 +107,14 @@ public class GUI {
     	pageNumColum.setCellValueFactory(new PropertyValueFactory<Page, Integer>("pageNumber"));
     	presentBitColum.setCellValueFactory(new PropertyValueFactory<TableEntry, Boolean>("presentBit"));
     	modifyBitColum.setCellValueFactory(new PropertyValueFactory<TableEntry, Boolean>("modifyBit"));
-        latColum.setCellValueFactory(new PropertyValueFactory<TableEntry, Integer>("latTime"));
-        frameNumColum.setCellValueFactory(new PropertyValueFactory<TableEntry, Integer>("frameNumber"));
+        latColum.setCellValueFactory(new PropertyValueFactory<>("lastAccessTime"));
+        frameNumColum.setCellValueFactory(new PropertyValueFactory<>("frameNumber"));
         
         addDataToPageTable();
         
-        frameNumbColum.setCellValueFactory(new PropertyValueFactory<Page, Integer>("frameNumber"));
-        pidColum.setCellValueFactory(new PropertyValueFactory<Page, Integer>("pId"));
-        pageNumbColum.setCellValueFactory(new PropertyValueFactory<Page, Integer>("pageNumber"));
+        frameNumbColum.setCellValueFactory(new PropertyValueFactory<>("frameNumber"));
+        pidColum.setCellValueFactory(new PropertyValueFactory<>("pID"));
+        pageNumbColum.setCellValueFactory(new PropertyValueFactory<>("pageNumber"));
 
         addDataToRAMTable();
     	
@@ -148,7 +148,7 @@ public class GUI {
 
         for (int i = 0; i < paginas.length ; i++) {
             if(paginas[i]!=null){
-                  ram.getItems().add(new Page(i, paginas[i].getpID(), paginas[i].getPageNumber()));
+                  ram.getItems().add(new Page(paginas[i].getPID(), paginas[i].getPageNumber(), i));
             }
         }
     }

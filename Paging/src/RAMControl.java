@@ -20,7 +20,7 @@ public class RAMControl {
 	
 	public Process findProcessInRAMPage(Page pa) {
 		for(Process p:ram.getProcessList()) {
-			if(p.getProcessId() == pa.getpID()) return p;
+			if(p.getProcessId() == pa.getPID()) return p;
 		}
 		return null;
 	}
@@ -53,7 +53,7 @@ public class RAMControl {
 		}
 		for(int i = 0; i < ram.getFrameCount(); i++) {
 			if(ram.getFrameValueArray()[i] != null) {
-				if(ram.getFrameValueArray()[i].getpID() == p.getProcessId()) removePage(ram.getFrameValueArray()[i]);
+				if(ram.getFrameValueArray()[i].getPID() == p.getProcessId()) removePage(ram.getFrameValueArray()[i]);
 			}
 		}
 		ram.removeProcess(p);
@@ -96,7 +96,7 @@ public class RAMControl {
 	
 	public void newAccesT(int time, Process p, List<Integer> adr) {
 		p.getLijst().get(adr.get(0)).getTableEntry().setModifyBit(true);
-		p.getLijst().get(adr.get(0)).getTableEntry().setLastAccessTime(time);;		
+		p.getLijst().get(adr.get(0)).getTableEntry().setLastAccessTime(time);	
 	}
 	
 	public void swap(int oldPage, Page p) {

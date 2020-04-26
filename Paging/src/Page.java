@@ -30,11 +30,11 @@ public class Page {
 		this.frameNumber = frameNumber;
 	}
 
-	public int getpID() {
+	public int getPID() {
 		return pID;
 	}
 
-	public void setpID(int pID) {
+	public void setPID(int pID) {
 		this.pID = pID;
 	}
 
