@@ -29,17 +29,17 @@
                   <Insets bottom="10.0" left="10.0" top="10.0" />
                </HBox.margin>
             </TitledPane>
-            <VBox prefHeight="200.0" prefWidth="300.0">
+            <VBox prefHeight="200.0" prefWidth="380.0">
                <children>
-                  <TitledPane animated="false" prefHeight="363.0" prefWidth="362.0" text="RAM">
+                  <TitledPane alignment="CENTER" animated="false" collapsible="false" prefHeight="363.0" prefWidth="362.0" text="RAM">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="365.0" prefWidth="350.0">
                            <children>
-                              <TableView fx:id="ram" onSort="#addDataToRAMTable" prefHeight="328.0" prefWidth="350.0">
+                              <TableView fx:id="ram" onSort="#addDataToRAMTable" prefHeight="328.0" prefWidth="365.0">
                                 <columns>
-                                  <TableColumn fx:id="frameNumbColum" prefWidth="124.0" text="Frame #" />
-                                  <TableColumn fx:id="pidColum" prefWidth="125.0" text="Process id" />
-                                    <TableColumn fx:id="pageNumbColum" prefWidth="100.0" text="Pagenumber" />
+                                  <TableColumn fx:id="frameNumbColum" prefWidth="100.0" text="Frame #" />
+                                  <TableColumn fx:id="pidColum" prefWidth="133.0" text="Process id" />
+                                    <TableColumn fx:id="pageNumbColum" prefWidth="131.0" text="Pagenumber" />
                                 </columns>
                               </TableView>
                            </children>
@@ -52,7 +52,7 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </TitledPane>
-                  <TitledPane alignment="TOP_CENTER" maxHeight="120.0" prefWidth="0.0" text="Operations" textAlignment="CENTER">
+                  <TitledPane alignment="TOP_CENTER" collapsible="false" maxHeight="120.0" prefWidth="0.0" text="Operations" textAlignment="CENTER">
                      <content>
                         <VBox prefHeight="90.0" prefWidth="350.0">
                            <children>
@@ -81,7 +81,7 @@
                         <Insets left="10.0" />
                      </VBox.margin>
                   </TitledPane>
-                  <ChoiceBox fx:id="kiesBox" prefHeight="25.0" prefWidth="358.0">
+                  <ChoiceBox fx:id="kiesBox" prefHeight="25.0" prefWidth="368.0">
                      <VBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>
@@ -90,7 +90,7 @@
             </VBox>
             <VBox maxWidth="400.0" prefHeight="540.0" prefWidth="376.0">
                <children>
-                  <TitledPane animated="false" prefHeight="86.0" prefWidth="356.0" text="General">
+                  <TitledPane alignment="CENTER" animated="false" collapsible="false" prefHeight="86.0" prefWidth="356.0" text="General">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="117.0" prefWidth="76.0">
                            <children>
@@ -118,7 +118,7 @@
                         <Insets left="10.0" right="10.0" top="10.0" />
                      </VBox.margin>
                   </TitledPane>
-                  <TitledPane animated="false" text="Previous instruction">
+                  <TitledPane alignment="CENTER" animated="false" collapsible="false" text="Previous instruction">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
@@ -155,7 +155,7 @@
                         <Insets left="10.0" right="10.0" top="10.0" />
                      </VBox.margin>
                   </TitledPane>
-                  <TitledPane animated="false" text="Current instruction">
+                  <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="CENTER" text="Current instruction">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>

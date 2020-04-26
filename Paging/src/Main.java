@@ -13,7 +13,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception{
 		Parent root = FXMLLoader.load(getClass().getResource("Vieuw.fxml"));
 		primaryStage.setTitle("Simulatie van geheugen en processor bij paginatie");
-		primaryStage.setScene(new Scene(root,300,250));
+		primaryStage.setScene(new Scene(root,1210,540));
 		primaryStage.show();
 	}
 }
